@@ -24,8 +24,8 @@ export default function Media() {
 
     return (
         <div className="flex flex-col items-center justify-center">
-            <h1 className="text-[2em] font-bold w-full flex items-center justify-center text-azul mt-5 mb-5">Media - ROTA 3</h1>
-            <div className=" rounded-md shadow-2xl p-12 lg:w-[30%] sm:w-[90%] flex flex-col items-center justify-center">
+            <h1 className="text-[2em] font-bold w-full flex items-center justify-center text-azul mt-24 mb-24">Media - ROTA 3</h1>
+            <div className="rounded-md shadow-2xl p-12 lg:w-1/3 md:w-4/5 flex flex-col items-center justify-center sm:w-[90%]">
                 <h3 className="text-[2em] font-bold text-azul mb-4 w-full items-start">Notas</h3>
                 <label className="w-full flex flex-row gap-2 font-bold">01°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a primeira nota..." value={nota1} onChange={(e) => setNota1(e.target.value)} /></label>
                 <label className="w-full flex flex-row gap-2 font-bold">02°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a segunda nota..." value={nota2} onChange={(e) => setNota2(e.target.value)} /></label>
@@ -35,7 +35,7 @@ export default function Media() {
                 <button onClick={() => calcularMedia()} className="bg-azul text-white text-[1.2em] p-2 font-semibold shadow-sm">Calcular Média</button>
                 <div className="border border-azul flex flex-col items-center justify-center shadow-md p-3 w-[40%] rounded-lg mt-4">
                     <h2>Resultado: </h2>
-                    <h1 className="text-[2em] font-bold">{media}</h1>
+                    <h1 className="text-[2em] font-bold ">{media}</h1>
                     <h2 className={media && media >= 7 ? "text-green-800 font-extrabold text-[1.5em]" : "text-red-800 font-extrabold text-[1.5em]"}>{media && media >= 7 ? "APROVADO" : "REPROVADO"}</h2>
                 </div>
             </div>

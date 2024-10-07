@@ -48,13 +48,13 @@ export default function IMC() {
         <div className="border border-azul flex flex-col lg:w-[50%] items-center justify-center p-14 sm:w-[90%] shadow-2xl">
             <div>
                 <label className="text-[1.5em] font-bold mt-24" htmlFor="">Peso: </label>
-                <input className="p-2 w-full" type="number" placeholder="Digite o peso" value={peso} onChange={(e) => setPeso(e.target.value)} />
+                <input className="p-2 w-full border-b-2 border-azul" type="number" placeholder="Digite o peso" value={peso} onChange={(e) => setPeso(e.target.value)} />
                 <label className="text-[1.5em] font-bold mt-24" htmlFor="">Altura: </label>
-                <input className="p-2 w-full" type="number" placeholder="Digite a altura" value={altura} onChange={(e) => setAltura(e.target.value)} />
+                <input className="p-2 w-full border-b-2 border-azul" type="number" placeholder="Digite a altura" value={altura} onChange={(e) => setAltura(e.target.value)} />
             </div>
             <button className="shadow-inner bg-amarelo p-2 pr-10 pl-10 font-semibold mt-4 mb-4" onClick={calcularIMC}>Calcular</button>
             <h2 className="text-[1.5em] font-bold">Seu IMC é: </h2>
-            <div className="flex flex-col items-center justify-center bg-branco p-3 w-[40%] rounded-lg">
+            <div className="flex flex-col items-center justify-center bg-branco p-3 w-[40%] rounded-lg  shadow-lg">
                 <h1 className="text-[2em] font-bold">{!isNaN(IMC ?? NaN) ? IMC.toFixed(2) : erro}</h1>
                 <h2 className="text-[1.5em]">{message}</h2>
             </div>

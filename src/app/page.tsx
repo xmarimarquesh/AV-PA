@@ -31,8 +31,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-[2em] font-bold w-full flex items-center justify-center text-azul mt-5 mb-5">Cards - ROTA 1</h1>
-      <div className="flex flex-col items-center lg:flex-row m-5 w-[80%] mt-24 mb-24">
+      <h1 className="text-[2em] font-bold w-full flex items-center justify-center text-azul mt-24 mb-24">Cards - ROTA 1</h1>
+      <div className="flex flex-col items-center lg:flex-row m-5 w-[80%] mb-24">
         {data.map((item, index) => (
           <div key={index} className="flex flex-col items-center justify-between w-4/5 min-h-[500px] m-2 border border-gray">
             <h1 className="text-[1.5em] bg-gradient-to-r from-azul via-blue-800 to-azul w-full h-[100px] flex items-center justify-center text-white">{item.titulo}</h1>
