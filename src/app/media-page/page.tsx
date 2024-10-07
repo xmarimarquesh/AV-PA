@@ -39,7 +39,7 @@ export default function Media() {
                 <button onClick={() => calcularMedia()} className="shadow-inner bg-amarelo p-2 pr-10 pl-10 font-semibold mt-4 mb-4">Calcular Média</button>
                 <div className="border border-azul flex flex-col items-center justify-center shadow-md p-3 w-[40%] rounded-lg mt-4">
                     <h2>Resultado: </h2>
-                    <h1 className="text-[2em] font-bold ">{media}</h1>
+                    <h1 className="text-[2em] font-bold ">{media.toFixed(2)}</h1>
                     <h2 className={media && media >= 7 ? "text-green-800 font-extrabold text-[1.5em]" : "text-red-800 font-extrabold text-[1.5em]"}>{media && media >= 7 ? "APROVADO" : "REPROVADO"}</h2>
                 </div>
             </div>
