@@ -8,26 +8,37 @@ export default function Media() {
     const [nota3, setNota3] = useState("")
     const [nota4, setNota4] = useState("")
     const [nota5, setNota5] = useState("")
+    
+    const [media, setMedia] = useState(0)
+    const [status, setStatus] = useState("")
 
-    function calcularMedia () {
+    const calcularMedia = () => {
         const n1 = parseFloat(nota1);
         const n2 = parseFloat(nota2);
         const n3 = parseFloat(nota3);
         const n4 = parseFloat(nota4);
         const n5 = parseFloat(nota5);
-
-
+        
+        setMedia((n1+n2+n3+n4+n5)/5);
     }
 
     return (
-        <>
+        <div className="flex flex-col items-center justify-center">
             <h1 className="text-[2em] font-bold w-full flex items-center justify-center text-azul mt-5 mb-5">Media - ROTA 3</h1>
-            <label htmlFor="">Notas</label>
-            <input type="number" placeholder="Digite a primeira nota" value={nota1} onChange={(e) => setNota1(e.target.value)} />
-            <input type="number" placeholder="Digite a segunda nota" value={nota2} onChange={(e) => setNota2(e.target.value)} />
-            <input type="number" placeholder="Digite a terceira nota" value={nota3} onChange={(e) => setNota3(e.target.value)} />
-            <input type="number" placeholder="Digite a quarta nota" value={nota4} onChange={(e) => setNota4(e.target.value)} />
-            <input type="number" placeholder="Digite a quinta nota" value={nota5} onChange={(e) => setNota5(e.target.value)} />
-        </>
+            <div className=" rounded-md shadow-2xl p-12 lg:w-[30%] sm:w-[90%] flex flex-col items-center justify-center">
+                <h3 className="text-[2em] font-bold text-azul mb-4 w-full items-start">Notas</h3>
+                <label className="w-full flex flex-row gap-2 font-bold">01°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a primeira nota..." value={nota1} onChange={(e) => setNota1(e.target.value)} /></label>
+                <label className="w-full flex flex-row gap-2 font-bold">02°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a segunda nota..." value={nota2} onChange={(e) => setNota2(e.target.value)} /></label>
+                <label className="w-full flex flex-row gap-2 font-bold">03°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a terceira nota..." value={nota3} onChange={(e) => setNota3(e.target.value)} /></label>
+                <label className="w-full flex flex-row gap-2 font-bold">04°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a quarta nota..." value={nota4} onChange={(e) => setNota4(e.target.value)} /></label>
+                <label className="w-full flex flex-row gap-2 font-bold">05°<input className="font-normal border-b w-full mb-6 border-azul" type="number" placeholder="Digite a quinta nota..." value={nota5} onChange={(e) => setNota5(e.target.value)} /></label>
+                <button onClick={() => calcularMedia()} className="bg-azul text-white text-[1.2em] p-2 font-semibold shadow-sm">Calcular Média</button>
+                <div className="border border-azul flex flex-col items-center justify-center shadow-md p-3 w-[40%] rounded-lg mt-4">
+                    <h2>Resultado: </h2>
+                    <h1 className="text-[2em] font-bold">{media}</h1>
+                    <h2 className={media && media >= 7 ? "text-green-800 font-extrabold text-[1.5em]" : "text-red-800 font-extrabold text-[1.5em]"}>{media && media >= 7 ? "APROVADO" : "REPROVADO"}</h2>
+                </div>
+            </div>
+        </div>
     )
 }
