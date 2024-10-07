@@ -45,7 +45,7 @@ export default function IMC() {
     return (
         <div className="w-full flex flex-col items-center justify-center">
         <h1 className="text-[2em] font-bold w-full flex items-center justify-center text-azul mt-24 mb-24">IMC - ROTA 2</h1>
-        <div className="border border-azul flex flex-col lg:w-[50%] items-center justify-center p-14 sm:w-[90%] shadow-2xl">
+        <div className=" flex flex-col lg:w-[50%] items-center justify-center p-14 sm:w-[90%] shadow-2xl">
             <div>
                 <label className="text-[1.5em] font-bold mt-24" htmlFor="">Peso: </label>
                 <input className="p-2 w-full border-b-2 border-azul" type="number" placeholder="Digite o peso" value={peso} onChange={(e) => setPeso(e.target.value)} />
